@@ -1,0 +1,1 @@
+export default function SiteHeader(){return <header className="site-header"><a href="#main" className="brand">КОНТУР</a><nav className="site-nav" aria-label="Разделы салона"><span>Услуги</span><span>Мастера</span><span>Отзывы</span></nav><span className="hours">Ежедневно 09:00–21:00</span></header>;}

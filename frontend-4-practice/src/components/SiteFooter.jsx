@@ -1,0 +1,1 @@
+export default function SiteFooter(){return <footer className="site-footer"><span className="brand">КОНТУР</span><p>Мужская парикмахерская<br/>Москва · ул. Лесная, 8</p><p>+7 (495) 000-00-00<br/>Ежедневно 09:00–21:00</p><p>© 2026 КОНТУР<br/>Учебный макет</p></footer>;}

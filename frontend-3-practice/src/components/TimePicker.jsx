@@ -1,0 +1,5 @@
+import {shortDate} from '../date.js';
+export default function TimePicker({selected,slots,time,onTime,loading=false,error=null,onRetry,children}){
+ const available=slots.some(slot=>slot.available);
+ return <section className="times" aria-label="Выбор времени" aria-busy={loading}><h2>{shortDate(selected)}</h2><p className="section-caption">Свободное время</p>{loading?<p className="loading" role="status">Загрузка слотов…</p>:error?<div className="notice error" role="alert"><p>{error}</p><button className="button secondary" onClick={onRetry}>Повторить запрос</button></div>:!available?<div className="notice" role="status">Свободных окон нет. Выберите другой день в календаре.</div>:<div className="slots">{slots.map(slot=><button type="button" key={slot.time} disabled={!slot.available} aria-pressed={time===slot.time} className={'slot'+(time===slot.time?' selected':'')} onClick={()=>onTime(slot.time)}>{slot.time}{!slot.available?' · занято':''}</button>)}</div>}<p className="legend">● Доступно  ○ Занято</p>{children}</section>;
+}
